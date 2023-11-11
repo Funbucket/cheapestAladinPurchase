@@ -1,5 +1,6 @@
 "use client";
 
+import axios from "axios";
 import { useBookSearchStore } from "@/stores/book/search";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { IconButton, TextField } from "@radix-ui/themes";
@@ -32,9 +33,10 @@ export function SearchInput({ onStart, onFinish }: Props) {
 
     const apiUrl = `/ItemSearch.aspx?${queryParams.toString()}`;
 
-    fetch(apiUrl)
-      .then((response) => response.json())
-      .then((data) => {
+    axios
+      .get(apiUrl)
+      .then((response) => {
+        const data = response.data;
         const books = data.item.map((item: any) => ({
           isbn: item.isbn,
           title: item.title,
