@@ -18,7 +18,7 @@ type Props = {
 export function BestOptionBookCard({ 판매자, 제목, 이미지, 가격, 상태, 배송비, 무료배송비최소금액, url }: Props) {
   return (
     <Card asChild key={url} mt="4" size="4">
-      <Link href={url}>
+      <Link href={url} target="_blank">
         <Flex mx="4" gap="3" align="center">
           <img className="Image" src={이미지} width={100} alt="Landscape photograph by Tobias Tullius" />
 
