@@ -8,7 +8,8 @@ export default function Home() {
   return (
     <main>
       <Section mx="8" pt="8" pb="0">
-        <Heading size="8">알라딘 중고 책 최저가를 알려드릴게요</Heading>
+        <Heading size="8">알라딘 중고 책</Heading>
+        <Heading size="8">최저가를 알려드릴게요</Heading>
 
         <Section pt="4">
           {purchaseOptions.map((option) => (
