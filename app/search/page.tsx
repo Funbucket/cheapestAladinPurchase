@@ -13,6 +13,7 @@ export default function Search() {
   const { books } = useBookSearchStore((state) => ({
     books: state.books,
   }));
+
   const [searching, setSearching] = useState(false);
 
   const handleSearchStart = () => {
