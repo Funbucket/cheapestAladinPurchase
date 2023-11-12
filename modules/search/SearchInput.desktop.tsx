@@ -31,7 +31,7 @@ export function SearchInput({ onStart, onFinish }: Props) {
       OptResult: "usedLIst",
     });
 
-    const apiUrl = `/ItemSearch.aspx?${queryParams.toString()}`;
+    const apiUrl = `/aladin/ItemSearch.aspx?${queryParams.toString()}`;
 
     axios
       .get(apiUrl)
