@@ -6,8 +6,8 @@ import "@/app/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import { ToastProvider } from "@/modules/main/ToastProvider";
-import { TopNavigation } from "@/modules/main/TopNavigation";
+import { ToastProvider } from "@/modules/home/ToastProvider";
+import { TopNavigation } from "@/modules/home/TopNavigation";
 
 const inter = Inter({ subsets: ["latin"] });
 

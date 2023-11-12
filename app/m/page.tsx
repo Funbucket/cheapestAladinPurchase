@@ -1,8 +1,8 @@
-import { AddBookButton } from "@/modules/main/AddBookButton.mobile";
-import { PurchaseOptionCard } from "@/modules/main/PurchaseOptionCard.mobile";
+import { AddBookButton } from "@/modules/home/AddBookButton.mobile";
+import { PurchaseOptionCard } from "@/modules/home/PurchaseOptionCard.mobile";
 import { Heading, Section } from "@radix-ui/themes";
-import { purchaseOptions } from "@/modules/main/PurchaseOptions";
-import ShoppingCart from "@/modules/main/ShoppingCart.mobile";
+import { purchaseOptions } from "@/modules/home/PurchaseOptions";
+import ShoppingCart from "@/modules/home/ShoppingCart.mobile";
 
 export default function Home() {
   return (

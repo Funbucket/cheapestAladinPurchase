@@ -1,6 +1,6 @@
 "use client";
 
-import { ShoppingCartBookCard } from "@/modules/main/ShoppingCartBookCard.mobile";
+import { ShoppingCartBookCard } from "@/modules/home/ShoppingCartBookCard.desktop";
 import { useShoppingCartStore } from "@/stores/book/shoppingCart";
 import { Container, Flex, Text } from "@radix-ui/themes";
 
@@ -14,7 +14,7 @@ export default function ShoppingCart() {
       {books.length === 0 ? (
         <Container my="5">
           <Flex align="center" justify="center">
-            <Text as="div" size="2" weight="bold">
+            <Text as="div" size="4" weight="bold">
               장바구니가 비었어요
             </Text>
           </Flex>
