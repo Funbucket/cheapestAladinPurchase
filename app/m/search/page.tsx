@@ -40,7 +40,7 @@ export default function Search() {
                 <Text mb="7" size="3" weight="bold">
                   책을 검색하고 있어요
                 </Text>
-                <div style={{ width: "100px" }}>
+                <div style={{ width: "150px" }}>
                   <Lottie animationData={Loading} />
                 </div>
               </Flex>

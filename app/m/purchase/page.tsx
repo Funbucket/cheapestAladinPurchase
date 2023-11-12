@@ -60,7 +60,7 @@ export default function Purchase() {
               <Text mb="7" size="3" weight="bold">
                 최적의 금액을 찾고 있어요
               </Text>
-              <div style={{ width: "100px" }}>
+              <div style={{ width: "150px" }}>
                 <Lottie animationData={Loading} />
               </div>
             </Flex>
