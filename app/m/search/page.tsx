@@ -1,6 +1,6 @@
 "use client";
 
-import { Container, Flex, Heading, Section, Text } from "@radix-ui/themes";
+import { Box, Container, Flex, Heading, Section, Text } from "@radix-ui/themes";
 import { SearchInput } from "@/modules/search/SearchInput.mobile";
 import { useState } from "react";
 import Lottie from "lottie-react";
@@ -33,20 +33,22 @@ export default function Search() {
       <Section mx="5" pt="0">
         {books.length > 0 && <Heading size="6">구매하려는 책을 담아주세요</Heading>}
 
-        <Section pt="3" pb="5">
-          {searching ? (
+        {searching ? (
+          <Section pt="3" pb="5">
             <Container mt="9">
               <Flex justify="center" direction="column" align="center">
                 <Text mb="7" size="3" weight="bold">
                   책을 검색하고 있어요
                 </Text>
-                <Lottie animationData={Loading} />
+                <div style={{ width: "100px" }}>
+                  <Lottie animationData={Loading} />
+                </div>
               </Flex>
             </Container>
-          ) : (
-            <BookSearchResults />
-          )}
-        </Section>
+          </Section>
+        ) : (
+          <BookSearchResults />
+        )}
       </Section>
     </main>
   );
