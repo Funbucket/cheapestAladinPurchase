@@ -55,7 +55,7 @@ export function PurchaseOptionCard({ 옵션, 제목, 설명 }: Props) {
 
   return (
     <Card asChild key={옵션} mt="4" size="1">
-      <Link href={uri} onClick={handleOptionCardClick}>
+      <Link href={uri} onClick={handleOptionCardClick} scroll={uri === "#" ? false : true}>
         <Flex mx="4" gap="4" align="center" justify="between">
           <Box>
             <Text as="div" size="3" weight="bold">
