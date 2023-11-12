@@ -7,7 +7,7 @@ import ShoppingCart from "@/modules/home/ShoppingCart.mobile";
 export default function Home() {
   return (
     <main>
-      <Section mx="5" pt="8" pb="0">
+      <Section mx="5" py="0">
         <Heading size="6">알라딘 중고 책</Heading>
         <Heading size="6">최저가를 알려드릴게요</Heading>
 
