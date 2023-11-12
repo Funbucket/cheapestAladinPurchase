@@ -11,11 +11,7 @@ const nextConfig = {
         destination: "http://www.aladin.co.kr/ttb/api/:path*",
       },
       {
-        source: "/m/:path*__index",
-        destination: "/:path*",
-      },
-      {
-        source: "/:path*__index",
+        source: "/:path*prefetch",
         destination: "/:path*",
       },
     ];
