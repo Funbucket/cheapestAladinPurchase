@@ -75,7 +75,9 @@ export default function Purchase() {
             ) : (
               <>
                 <Heading size="8">총 {bestOption.totalPrice} 원</Heading>
-
+                <Heading size="4" color="gray">
+                  최저가를 장바구니에 담으러 가보세요
+                </Heading>
                 <Section pt="4">
                   <BestOptionResults combination={bestOption.combination} />
                 </Section>
