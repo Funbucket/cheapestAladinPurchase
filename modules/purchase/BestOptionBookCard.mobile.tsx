@@ -3,6 +3,7 @@
 import { Box, Card, Flex, Text } from "@radix-ui/themes";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { useToastStore } from "@/stores/toast";
+import { gtagClickUrl } from "@/utils/gtag";
 
 type Props = {
   판매자: string;
@@ -31,6 +32,7 @@ export function BestOptionBookCard({ 판매자, 제목, 이미지, 가격, 상�
     document.execCommand("copy");
     document.body.removeChild(tempInput);
 
+    gtagClickUrl(제목, url);
     if (open) {
       dispatchToastOpen(false);
       dispatchToastMsg("");

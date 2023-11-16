@@ -66,3 +66,19 @@ export const gtagCheapestOption = (combination: BestPurchaseOptionBookDetail[], 
     });
   }
 };
+
+export const gtagClickUrl = (bookTitle: string, url: string) => {
+  if (typeof window.dataLayer !== "undefined") {
+    window.dataLayer.push({
+      event: "cheapestOption",
+      bookTitle: bookTitle,
+      url: url,
+    });
+  } else {
+    console.log({
+      event: "cheapestOption",
+      bookTitle: bookTitle,
+      url: url,
+    });
+  }
+};
