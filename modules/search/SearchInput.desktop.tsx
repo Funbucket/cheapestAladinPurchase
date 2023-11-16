@@ -5,6 +5,7 @@ import { useBookSearchStore } from "@/stores/book/search";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { IconButton, TextField } from "@radix-ui/themes";
 import { useState } from "react";
+import { gtagSearchBooks } from "@/utils/gtag";
 
 type Props = {
   onStart: () => void;
@@ -18,6 +19,7 @@ export function SearchInput({ onStart, onFinish }: Props) {
   }));
 
   const handleSearchBooks = () => {
+    gtagSearchBooks(bookTitle);
     onStart();
 
     const queryParams = new URLSearchParams({

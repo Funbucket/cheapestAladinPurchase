@@ -80,7 +80,9 @@ export default function Purchase() {
               </Container>
             ) : (
               <>
-                <Heading size="6">총 {bestOption.totalPrice} 원</Heading>
+                <Heading size="6" id="total-price">
+                  총 {bestOption.totalPrice} 원
+                </Heading>
                 <Heading size="2" color="gray">
                   복사한 링크에서 최저가를 구매해 보세요
                 </Heading>

@@ -1,6 +1,6 @@
 "use client";
 
-import { GTM_ID, pageview } from "@/utils/ga";
+import { GTM_ID, gtagPageview } from "@/utils/gtag";
 import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
 import { useEffect } from "react";
@@ -11,7 +11,7 @@ export default function Analytics() {
 
   useEffect(() => {
     if (pathname) {
-      pageview(pathname);
+      gtagPageview(pathname);
     }
   }, [pathname, searchParams]);
 

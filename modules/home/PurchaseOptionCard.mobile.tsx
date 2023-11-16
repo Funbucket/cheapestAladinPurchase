@@ -7,6 +7,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useEffect, useState } from "react";
 import { useShoppingCartStore } from "@/stores/book/shoppingCart";
 import { useToastStore } from "@/stores/toast";
+import { gtagShoppingCart } from "@/utils/gtag";
 
 type Props = {
   옵션: number;
@@ -42,6 +43,8 @@ export function PurchaseOptionCard({ 옵션, 제목, 설명 }: Props) {
         dispatchToastOpen(true);
         dispatchToastType("warning");
       }
+    } else {
+      gtagShoppingCart(shoppingCart);
     }
   };
 
