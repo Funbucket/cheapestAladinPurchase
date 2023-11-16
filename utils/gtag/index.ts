@@ -1,4 +1,5 @@
 import { BestPurchaseOptionBookDetail, Book } from "@/stores/book/book.types";
+import { concatenateTitles } from "./concatenateTitles";
 
 type WindowWithDataLayer = Window & {
   dataLayer: Record<string, any>[];
@@ -26,12 +27,12 @@ export const gtagShoppingCart = (shoppingCart: Book[]) => {
   if (typeof window.dataLayer !== "undefined") {
     window.dataLayer.push({
       event: "goToViewOptions",
-      shoppingCart: shoppingCart,
+      shoppingCart: concatenateTitles(shoppingCart),
     });
   } else {
     console.log({
       event: "goToViewOptions",
-      shoppingCart: shoppingCart,
+      shoppingCart: concatenateTitles(shoppingCart),
     });
   }
 };
@@ -54,13 +55,13 @@ export const gtagCheapestOption = (combination: BestPurchaseOptionBookDetail[], 
   if (typeof window.dataLayer !== "undefined") {
     window.dataLayer.push({
       event: "cheapestOption",
-      option: combination,
+      option: concatenateTitles(combination),
       totalPrice: totalPrice,
     });
   } else {
     console.log({
       event: "cheapestOption",
-      option: combination,
+      option: concatenateTitles(combination),
       totalPrice: totalPrice,
     });
   }
