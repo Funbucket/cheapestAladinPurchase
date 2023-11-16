@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { BestPurchaseOptionBookDetail } from "@/stores/book/book.types";
 import Lottie from "lottie-react";
 import { Loading } from "@/assets/lotties";
+import { gtagCheapestOption } from "@/utils/gtag";
 
 export default function Purchase() {
   const router = useRouter();
@@ -34,6 +35,7 @@ export default function Purchase() {
       try {
         setLoading(true);
         const result = await getBestPurchaseOption(shoppingCart, statusOption);
+        gtagCheapestOption(result.combination, result.totalPrice);
         setBestOption({ combination: result.combination, totalPrice: result.totalPrice });
       } catch (error) {
         console.error(error);

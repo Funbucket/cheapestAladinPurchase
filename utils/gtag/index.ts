@@ -1,4 +1,4 @@
-import { Book } from "@/stores/book/book.types";
+import { BestPurchaseOptionBookDetail, Book } from "@/stores/book/book.types";
 
 type WindowWithDataLayer = Window & {
   dataLayer: Record<string, any>[];
@@ -46,6 +46,22 @@ export const gtagSearchBooks = (bookTitle: string) => {
     console.log({
       event: "searchBooks",
       bookTitle: bookTitle,
+    });
+  }
+};
+
+export const gtagCheapestOption = (combination: BestPurchaseOptionBookDetail[], totalPrice: number) => {
+  if (typeof window.dataLayer !== "undefined") {
+    window.dataLayer.push({
+      event: "cheapestOption",
+      option: combination,
+      totalPrice: totalPrice,
+    });
+  } else {
+    console.log({
+      event: "cheapestOption",
+      option: combination,
+      totalPrice: totalPrice,
     });
   }
 };
