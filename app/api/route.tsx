@@ -36,6 +36,9 @@ export async function GET(req: Request): Promise<Response> {
       const url = extractUrlFromLoactionHref($(el).attr("onclick") as string);
 
       const { minDeliveryFee, deliveryFee } = extractDeliveryFee(deliveryInfo);
+      console.log(
+        "deliveryInfo: " + deliveryInfo + " / minDeliveryFee: " + minDeliveryFee + " / deliveryFee: " + deliveryFee
+      );
       shops[idx] = {
         title,
         seller,

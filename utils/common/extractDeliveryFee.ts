@@ -2,14 +2,14 @@ export default function extractDeliveryFee(input: string): { minDeliveryFee: num
   // 패턴 1: "배송비 : x만원 미만 배송료 y원"
   const pattern1 = /배송비 : (\d+,*\d*)만원 미만 배송료 ([\d,]+)원/;
 
-  // 패턴 2: "배송비 : x원 미만 y원"
-  const pattern2 = /배송비 : (\d+,*\d*)원 미만 ([\d,]+)원/;
+  // 패턴 2: "배송비 : x원 미만 y원, 반값택배 : z원"
+  const pattern2 = /배송비 : (\d+,*\d*)원 미만 ([\d,]+)원, 반값택배 : (\d+,*\d*)원/;
 
-  // 패턴 3: "배송비 : x원"
-  const pattern3 = /배송비 : ([\d,]+)원/;
+  // 패턴 3: "배송비 : x원 미만 y원"
+  const pattern3 = /배송비 : (\d+,*\d*)원 미만 ([\d,]+)원/;
 
-  // 패턴 4: "배송비 : x원 미만 y원, 반값택배 : z원"
-  const pattern4 = /배송비 : (\d+,*\d*)원 미만 ([\d,]+)원, 반값택배 : (\d+,*\d*)원/;
+  // 패턴 4: "배송비 : x원"
+  const pattern4 = /배송비 : ([\d,]+)원/;
 
   // 패턴 5: "배송비 : x만원 이상 무료, 그 뒤에 어떤 문자열이 와도 상관없음"
   const pattern5 = /배송비 : (\d+,*\d*)만원 이상 무료(, .*)?/;
@@ -27,22 +27,22 @@ export default function extractDeliveryFee(input: string): { minDeliveryFee: num
   const match2 = input.match(pattern2);
   if (match2) {
     const minDeliveryFee = parseInt(match2[1].replace(",", ""), 10);
-    const deliveryFee = parseInt(match2[2].replace(",", ""), 10);
+    const deliveryFee = parseInt(match2[3].replace(",", ""), 10);
+
     return { minDeliveryFee, deliveryFee };
   }
 
   const match3 = input.match(pattern3);
   if (match3) {
-    const minDeliveryFee = undefined;
-    const deliveryFee = parseInt(match3[1].replace(",", ""), 10);
+    const minDeliveryFee = parseInt(match3[1].replace(",", ""), 10);
+    const deliveryFee = parseInt(match3[2].replace(",", ""), 10);
     return { minDeliveryFee, deliveryFee };
   }
 
   const match4 = input.match(pattern4);
   if (match4) {
-    const minDeliveryFee = parseInt(match4[1].replace(",", ""), 10);
-    const deliveryFee = parseInt(match4[3].replace(",", ""), 10);
-
+    const minDeliveryFee = undefined;
+    const deliveryFee = parseInt(match4[1].replace(",", ""), 10);
     return { minDeliveryFee, deliveryFee };
   }
 

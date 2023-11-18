@@ -46,7 +46,7 @@ export function BestOptionBookCard({ 판매자, 제목, 이미지, 가격, 상�
               상태: {상태}
             </Text>
             <Text as="div" size="4" color="gray" mt="2">
-              {무료배송비최소금액} 이상 구매 시 배송비 무료
+              {!무료배송비최소금액 ? "무조건 유료 배송" : `${무료배송비최소금액} 이상 구매 시 배송비 무료`}
             </Text>
           </Box>
           <ArrowForwardIosIcon fontSize="large" />
