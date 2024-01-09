@@ -8,8 +8,9 @@ import { Inter } from "next/font/google";
 
 import { ToastProvider } from "@/modules/home/ToastProvider";
 import { TopNavigation } from "@/modules/home/TopNavigation";
-import Analytics from "@/modules/Analytics";
+import GTM from "@/modules/GTM";
 import { Suspense } from "react";
+import WC from "@/modules/WC";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +24,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html suppressHydrationWarning className="dark-theme">
       <body className={`${inter.className} dark`}>
         <Suspense>
-          <Analytics />
+          <GTM />
+          <WC />
         </Suspense>
         <Theme appearance="dark">
           <ToastProvider>
