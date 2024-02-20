@@ -10,7 +10,6 @@ declare const window: WindowWithNtm;
 
 export const wcSearchBooks = (bookTitle: string) => {
   if (typeof window.Ntm !== "undefined") {
-    console.log("wc fireUserDefined");
     window.Ntm.Event.fireUserDefined("searchBook", { bookTitle: bookTitle });
   } else {
     console.log({
