@@ -6,6 +6,7 @@ import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { IconButton, TextField } from "@radix-ui/themes";
 import { useState } from "react";
 import { gtagSearchBooks } from "@/utils/gtag";
+import { wcSearchBooks } from "@/utils/wc";
 
 type Props = {
   onStart: () => void;
@@ -20,6 +21,7 @@ export function SearchInput({ onStart, onFinish }: Props) {
 
   const handleSearchBooks = () => {
     gtagSearchBooks(bookTitle);
+    wcSearchBooks(bookTitle);
     onStart();
 
     const queryParams = new URLSearchParams({
