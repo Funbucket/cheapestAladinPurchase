@@ -46,7 +46,6 @@ export default function Purchase() {
       }
     };
 
-    console.log(shoppingCart);
     if (shoppingCart.length > 0) {
       fetchData();
     } else {
