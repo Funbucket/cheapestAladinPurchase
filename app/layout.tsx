@@ -15,8 +15,8 @@ import WC from "@/modules/WC";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "싸다알라딘 | 홈",
-  description: "합리적인 알라딘 중고 책 구매",
+  title: "책모아 | 홈",
+  description: "중고책을 저렴하게 모아서 사는 법",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
