@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main>
       <Section mx="5" py="0">
-        <Heading size="6">중고 책 모아서 저렴하게 구매하기</Heading>
+        <Heading size="6">여러 중고책을 최저가로 구매하는 방법</Heading>
         <Heading size="2" color="gray">
         동일 중고 매장, 배송비를 고려한
         </Heading>
