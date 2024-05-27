@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <main>
       <Section mx="8" pt="8" pb="0">
-        <Heading size="8">알라딘 중고 책</Heading>
+        <Heading size="8">여러 중고 책 저렴하게 구매하기</Heading>
         <Heading size="4" color="gray">
-          동일 중고 매장, 배송비, 배송비 무료 최소금액을 모두 고려한
+          동일 중고 매장, 배송비를 고려한
         </Heading>
         <Heading size="8">최저가를 알려드릴게요</Heading>
 
