@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main>
       <Section mx="8" pt="8" pb="0">
-        <Heading size="8">여러 중고 책 저렴하게 구매하기</Heading>
+        <Heading size="8">여러 중고책 최저가로 구매하기</Heading>
         <Heading size="4" color="gray">
           동일 중고 매장, 배송비를 고려한
         </Heading>
