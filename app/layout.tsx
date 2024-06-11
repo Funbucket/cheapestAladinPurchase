@@ -11,6 +11,7 @@ import { TopNavigation } from "@/modules/home/TopNavigation";
 import GTM from "@/modules/GTM";
 import { Suspense } from "react";
 import WC from "@/modules/WC";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,9 +20,20 @@ export const metadata: Metadata = {
   description: "중고책을 저렴하게 모아서 사는 법",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html suppressHydrationWarning className="dark-theme">
+      <head>
+        <Script
+          defer
+          data-domain="checkmoa.site"
+          src="https://saas-boilerplate-woad.vercel.app/js/script.js"
+        ></Script>
+      </head>
       <body className={`${inter.className} dark`}>
         <Suspense>
           <GTM />
