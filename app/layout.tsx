@@ -31,7 +31,7 @@ export default function RootLayout({
         <Script
           defer
           data-domain="checkmoa.site"
-          src="https://saas-boilerplate-woad.vercel.app/js/script.js"
+          src="https://action-speak.vercel.app/js/script.js"
         ></Script>
       </head>
       <body className={`${inter.className} dark`}>
