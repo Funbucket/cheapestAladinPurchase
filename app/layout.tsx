@@ -28,12 +28,17 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning className="dark-theme">
       <head>
-        <Script
-          defer
-          data-domain="checkmoa.site"
-          src="https://actionspeak.kr/js/script.js"
-          strategy="beforeInteractive"
-        ></Script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+      var script = document.createElement('script');
+      script.defer = true;
+      script.dataset.domain = "checkmoa.site";
+      script.src = "https://actionspeak.kr/js/script.js";
+      document.head.appendChild(script);
+    `,
+          }}
+        />
       </head>
       <body className={`${inter.className} dark`}>
         <Suspense>
