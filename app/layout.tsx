@@ -31,7 +31,8 @@ export default function RootLayout({
         <Script
           defer
           data-domain="checkmoa.site"
-          src="https://action-speak.vercel.app/js/script.js"
+          src="https://actionspeak.kr/js/script.js"
+          strategy="beforeInteractive"
         ></Script>
       </head>
       <body className={`${inter.className} dark`}>
